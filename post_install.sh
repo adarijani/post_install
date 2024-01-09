@@ -1,10 +1,11 @@
 #!/usr/bin/bash
 
-sudo pacman -Syyu --noconfirm
-pkgs="vi vim"
-sudo pacman -S  $pkgsi --needed --noconfirm
-pkgs="wezterm kitty alacritty"
-sudo pacman -S $pkgs --needed --noconfirm
+# pacman stuff
+sudo pacman-mirrors --geoip && sudo pacman -Syyu --noconfirm
+cli_text_editors="vi vim"
+sudo pacman -S  $cli_text_editors --needed --noconfirm
+terminal_emulators="wezterm kitty alacritty"
+sudo pacman -S $terminal_emulators --needed --noconfirm
 sudo pacman -S zsh --needed --noconfirm
 sudo pacman -S git --needed --noconfirm
 sudo pacman -S firefox --needed --noconfirm
@@ -21,7 +22,14 @@ sudo pacman -S ksnip --needed --noconfirm
 sudo pacman -S fzf --needed --noconfirm
 sudo pacman -S tealdeer --needed --noconfirm
 sudo pacman -S man --needed --noconfirm
-sudo pacman -S code --needed --noconfirm
+
+# AUR stuff
+sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
+sudo pamac upgrade --no-confirm
+sudo pamac visual-studio-code-bin --no-confirm
+sudo pamac install zoom --no-confirm
+sudo pamac install teams --no-confirm
+sudo pamac install autojump --no-confirm
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
