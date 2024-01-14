@@ -1,1 +1,1 @@
-# manjaro_post_install_ai
+# post_install
