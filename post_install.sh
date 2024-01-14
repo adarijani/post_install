@@ -22,14 +22,35 @@ sudo pacman -S ksnip --needed --noconfirm
 sudo pacman -S fzf --needed --noconfirm
 sudo pacman -S tealdeer --needed --noconfirm
 sudo pacman -S man --needed --noconfirm
+sudo pacman -S code --needed --noconfirm
+sudo pacman -S docker --needed --noconfirm
 
 # AUR stuff
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 sudo pamac upgrade --no-confirm
-sudo pamac visual-studio-code-bin --no-confirm
+sudo pamac install visual-studio-code-bin --no-confirm
 sudo pamac install zoom --no-confirm
 sudo pamac install teams --no-confirm
 sudo pamac install autojump --no-confirm
+
+
+
+
+
+# installing visual studio code extensions
+code --install-extension yzhang.markdown-all-in-one
+
+
+
+
+
+
+
+
+
+
+
+
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
