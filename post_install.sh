@@ -14,7 +14,8 @@ sudo pacman -S firefox --needed --noconfirm
 sudo pacman -S thunderbird --needed --noconfirm
 sudo pacman -S owncloud-client --needed --noconfirm
 sudo pacman -S lsd --needed --noconfirm
-sudo pacman -S exa --needed --noconfirm
+sudo pacman -S eza --needed --noconfirm
+
 sudo pacman -S nerd-fonts --needed --noconfirm
 sudo pacman -S okular --needed --noconfirm
 sudo pacman -S element-desktop --needed --noconfirm
