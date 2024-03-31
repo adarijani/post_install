@@ -14,8 +14,7 @@ sudo pacman -S firefox --needed --noconfirm
 sudo pacman -S thunderbird --needed --noconfirm
 sudo pacman -S owncloud-client --needed --noconfirm
 sudo pacman -S lsd --needed --noconfirm
-sudo pacman -S eza --needed --noconfirm
-
+sudo pacman -S exa --needed --noconfirm
 sudo pacman -S nerd-fonts --needed --noconfirm
 sudo pacman -S okular --needed --noconfirm
 sudo pacman -S element-desktop --needed --noconfirm
@@ -27,6 +26,8 @@ sudo pacman -S tealdeer --needed --noconfirm
 sudo pacman -S man --needed --noconfirm
 sudo pacman -S code --needed --noconfirm
 sudo pacman -S docker --needed --noconfirm
+sudo pacman -S yt-dlp --needed --noconfirm
+sudo pacman -S cmake --needed --noconfirm
 
 # AUR stuff
 sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
@@ -35,6 +36,7 @@ sudo pamac install visual-studio-code-bin --no-confirm
 sudo pamac install zoom --no-confirm
 sudo pamac install teams --no-confirm
 sudo pamac install autojump --no-confirm
+sudo pamac install amberol --no-confirm
 
 # installing visual studio code extensions
 code --install-extension yzhang.markdown-all-in-one
