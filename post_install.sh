@@ -1,8 +1,22 @@
 #!/usr/bin/bash
 
+# cleaning Downloads, Desktop and Trash
+
+sudo rm -rf ~/Desktop/*
+sudo rm -rf ~/Downloads/*
+sudo rm -rf ~/.local/share/Trash/*
+# system maintenance
+
+sudo find ~/.cache/ -type f -atime +10 -delete
+sudo  journalctl --vacuum-time=0
+sudo rm -rf /var/log/*
+
 # pacman stuff
 sudo pacman-mirrors --geoip && sudo pacman -Syyu --noconfirm
 sudo pacman -S base-devel --needed --noconfirm
+# \LaTeX stuff
+sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --self update
+sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --all update
 
 cli_text_editors="vi vim"
 sudo pacman -S $cli_text_editors --needed --noconfirm
@@ -34,7 +48,6 @@ sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
 sudo pamac upgrade --no-confirm
 sudo pamac install visual-studio-code-bin --no-confirm
 sudo pamac install zoom --no-confirm
-sudo pamac install teams --no-confirm
 sudo pamac install autojump --no-confirm
 sudo pamac install amberol --no-confirm
 
