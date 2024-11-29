@@ -14,10 +14,6 @@ sudo rm -rf /var/log/*
 # pacman stuff
 sudo pacman-mirrors --geoip && sudo pacman -Syyu --noconfirm
 sudo pacman -S base-devel --needed --noconfirm
-# \LaTeX stuff
-sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --self update
-sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --all update
-
 cli_text_editors="vi vim"
 sudo pacman -S $cli_text_editors --needed --noconfirm
 terminal_emulators="wezterm kitty alacritty"
@@ -38,21 +34,28 @@ sudo pacman -S ksnip --needed --noconfirm
 sudo pacman -S fzf --needed --noconfirm
 sudo pacman -S tealdeer --needed --noconfirm
 sudo pacman -S man --needed --noconfirm
-sudo pacman -S code --needed --noconfirm
 sudo pacman -S docker --needed --noconfirm
 sudo pacman -S yt-dlp --needed --noconfirm
 sudo pacman -S cmake --needed --noconfirm
 
 # AUR stuff
-sudo sed -Ei '/EnableAUR/s/^#//' /etc/pamac.conf
-sudo pamac upgrade --no-confirm
-sudo pamac install visual-studio-code-bin --no-confirm
-sudo pamac install zoom --no-confirm
-sudo pamac install autojump --no-confirm
-sudo pamac install amberol --no-confirm
+sudo paru
+sudo paru install visual-studio-code-bin --needed --noconfirm
+sudo paru install zoom --needed --noconfirm
+sudo paru install autojump --needed --noconfirm
+
+# \LaTeX stuff
+sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --self update
+sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --all update
+
 
 # installing visual studio code extensions
+code --install-extension ms-vscode-remote.vscode-remote-extensionpack
+code --install-extension ms-vscode.remote-repositories
+code --install-extension James-Yu.latex-workshop
 code --install-extension yzhang.markdown-all-in-one
+code --install-extension vscodevim.vim
+
 if [ -d ~/.oh-my-zsh ]; then
     echo "The oh-my-zsh is probably already installed..."
 else
