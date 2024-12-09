@@ -37,6 +37,8 @@ sudo pacman -S man --needed --noconfirm
 sudo pacman -S docker --needed --noconfirm
 sudo pacman -S yt-dlp --needed --noconfirm
 sudo pacman -S cmake --needed --noconfirm
+sudo pacman -S steam --needed --noconfirm
+sudo pacman -S discord --needed --noconfirm
 
 # AUR stuff
 sudo paru
@@ -55,6 +57,7 @@ code --install-extension ms-vscode.remote-repositories
 code --install-extension James-Yu.latex-workshop
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension vscodevim.vim
+code --install-extension ms-python.python
 
 if [ -d ~/.oh-my-zsh ]; then
     echo "The oh-my-zsh is probably already installed..."
