@@ -41,10 +41,9 @@ sudo pacman -S steam --needed --noconfirm
 sudo pacman -S discord --needed --noconfirm
 
 # AUR stuff
-sudo paru
-sudo paru install visual-studio-code-bin --needed --noconfirm
-sudo paru install zoom --needed --noconfirm
-sudo paru install autojump --needed --noconfirm
+paru -S visual-studio-code-bin --needed --noconfirm
+paru -S zoom --needed --noconfirm
+paru -S autojump --needed --noconfirm
 
 # \LaTeX stuff
 sudo /usr/local/texlive/2024/bin/x86_64-linux/tlmgr --self update
