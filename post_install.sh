@@ -21,8 +21,6 @@ sudo pacman -S $terminal_emulators --needed --noconfirm
 sudo pacman -S zsh --needed --noconfirm
 sudo pacman -S git --needed --noconfirm
 sudo pacman -S firefox --needed --noconfirm
-sudo pacman -S thunderbird --needed --noconfirm
-sudo pacman -S owncloud-client --needed --noconfirm
 sudo pacman -S lsd --needed --noconfirm
 sudo pacman -S exa --needed --noconfirm
 sudo pacman -S nerd-fonts --needed --noconfirm
